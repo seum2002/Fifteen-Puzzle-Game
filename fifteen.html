@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fifteen Puzzle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <br><br><br>
+    <h1>Fifteen Puzzle</h1>
+    <p class="top">The goal of the fifteen puzzle is to un-jumble its fifteen squares by repeatedly making moves that slide squares into the empty space. How quickly can you solve it?</p>
+    
+    <!--<div class="size"><legend for="size">Choose size:</legend>
+    <input type="radio" id="three" name="size">3x3</input>
+    <input type="radio" id="four" name="size">4x4</input>
+    <input type="radio" id="five" name="size">5x5</input></div>-->
+
+    <button id="shuffle-button" onclick="shuffle()">Shuffle</button>
+    <div id="puzzle-container"></div>
+	 <audio id="backgroundMusic" loop>
+        <source src="bgmusic.mp3" type="audio/mp3">
+    </audio>
+ <p class="bottom">American puzzle author and mathmetician Sam Loyd is often falsely credited with creating the puzzle; indeed, 
+    Loyd claimed from 1891 until his death in 1911 that he invented it. The puzzle was actually created around 
+    1974 by Noyes Palmer Champan, a postmaster in Canastata, NY. </p>
+    <div id="game-info">
+        <p id="time">Time: 0s</p>
+        <p id="moves">Moves: 0</p>
+        <p id="best-time">Best Time: --</p>
+        <p id="best-moves">Best Moves: --</p>
+    </div>
+    <div class="background">
+        <!--<label for="background">Choose background:</label>-->
+        <select id="background" name="background" onchange="changeBackground(this.value)">
+            <option value="background1.png">Choose your background:</option>
+            <option value="background1.png">Background 1</option>
+            <option value="background2.png">Background 2</option>
+            <option value="background3.png">Background 3</option>
+            <option value="background4.png">Background 4</option>
+            <option value="background5.jpg">Background 5</option>
+            <option value="background6.jpg">Background 6</option>
+            <option value="background7.jpg">Background 7</option>
+            <option value="background8.jpg">Background 8</option>
+        </select>
+    </div>
+    <br><br>
+    <button id="toggleMusicButton" onclick="toggleMusic()">Toggle Music</button>
+    <div id="overlay" class="overlay">
+        <div id="overlayContent" class="overlay-content">
+            <div id="overlayMessage" class="overlay-message"></div>
+            <img id="overlayImage" class="overlay-image" alt="Winner Image">
+            <div class="overlay-close">Click anywhere to close</div>
+        </div>
+    </div>
+    <p>
+        <a href="https://jigsaw.w3.org/css-validator/" ><img src="w3c-css.png" alt="W3C CSS" class="validation"/> </a>
+        <a href="https://validator.w3.org/"><img src="w3c-xhtml.png" alt="W3C XHTML" class="validation"/> </a>
+    </p>
+	<script src="fifteen.js"></script>
+</body>
+</html>
